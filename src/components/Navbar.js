@@ -7,17 +7,20 @@ const Navbar = () => {
     <nav style={navbarStyle}>
       <img src={logo} alt="Logo" style={logoStyle} /> {/* Logo on the left */}
       <ul style={navListStyle}>
-        <li><Link to="home" smooth={true} style={{ color: 'blue' }}>Home</Link></li>
-        <li><Link to="about" smooth={true} style={{ color: 'gray' }}>About</Link></li>
-        <li><Link to="skills" smooth={true} style={{ color: 'red' }}>Skills</Link></li>
-        <li><Link to="projects" smooth={true} style={{ color: 'green' }}>Projects</Link></li>
-        <li><Link to="contact" smooth={true} style={{ color: 'orange' }}>Contact</Link></li>
+        <li><Link to="home" smooth={true} style={textcol}>Home</Link></li>
+        <li><Link to="about" smooth={true} style={textcol}>About</Link></li>
+        <li><Link to="skills" smooth={true} style={textcol}>Skills</Link></li>
+        <li><Link to="projects" smooth={true} style={textcol}>Projects</Link></li>
+        <li><Link to="contact" smooth={true} style={textcol}>Contact</Link></li>
       </ul>
     </nav>
   );
 }
-
+const textcol={
+  color: 'white',
+}
 const navbarStyle = {
+  
   position: 'fixed',
   top: '0',
   width: '100%',           // Full width
