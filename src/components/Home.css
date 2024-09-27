@@ -29,4 +29,65 @@ section {
     width: 40%; /* Adjust width as needed */
     height: auto; /* Maintain aspect ratio */
   }
+  .greeting-container {
+    margin-top: 20px; /* Space between name and greeting */
+  }
   
+  .greeting-text {
+    font-size: 24px;
+    color: #555; /* Slightly lighter color for the greeting */
+  }
+  .animated-sentence {
+    font-size: 24px;
+    color: #555; /* Slightly lighter color for the animated sentence */
+    margin-top: 10px; /* Space between greeting and animated sentence */
+  }
+  
+  .animated-text {
+    display: inline-block;
+    white-space: nowrap; /* Ensures the text does not break into multiple lines */
+    overflow: hidden; /* Hides the text that hasn't appeared yet */
+    border-right: 2px solid; /* Simulates the cursor effect */
+    font-family: monospace; /* Optional: Gives it a more "typewriter" look */
+    animation: typing 4s steps(20) infinite, blink-cursor 0.75s step-end ;
+  }
+  
+  /* Keyframes for typing animation */
+  @keyframes typing {
+    0% {
+      width: 0; /* Start by hiding all the text */
+    }
+    80% {
+      width: 100%; /* Reveal the entire text */
+    }
+    100% {
+      width: 0; /* Hide the text again for a seamless loop */
+    }
+  }
+  
+  /* Cursor blinking animation */
+  @keyframes blink-cursor {
+    from, to {
+      border-color: transparent; /* Hides the cursor at both ends */
+    }
+    50% {
+      border-color: black; /* Shows the cursor briefly in the middle */
+    }
+  }
+  
+  
+  /* Styling the cursor line after the text */
+  .cursor {
+    display: inline-block;
+    width: 1px;
+    background-color: black;
+    animation: blink-cursor 0.75s step-end infinite;
+  }
+  @keyframes blink-cursor {
+    from, to {
+      border-color: transparent; /* Hides the cursor at both ends */
+    }
+    50% {
+      border-color: black; /* Shows the cursor briefly in the middle */
+    }
+  }

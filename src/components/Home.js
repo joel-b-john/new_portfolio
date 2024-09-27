@@ -7,8 +7,13 @@ const Home = () => {
     <section id="home">
       <div className="rectangle">
         <div className="text-container">
-          <h1>Welcome to My Portfolio</h1>
-          <p>This is a brief introduction about myself.</p>
+        <div className="greeting-container">
+          <h2 className="greeting-text"> I'm Joel,</h2>
+          <h2 className="animated-sentence">
+            I'm
+            <h1> <span className="animated-text">Full Stack Developer</span></h1>
+          </h2>
+        </div>
         </div>
         <img src={yourImage} alt="Description" className="image" />
       </div>
