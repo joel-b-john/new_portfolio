@@ -5,18 +5,20 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px; /* Add some padding for smaller screens */
   }
   
   .rectangle {
-    width: 80%;
-    height: 50%;
-    background-color: #a49b9b; /* Light gray rectangle */
+    width: 90%; /* Use percentages for responsiveness */
+    max-width: 800px; /* Optional: limit max width for larger screens */
+    height: auto; /* Allow height to adjust based on content */
+    background-color: #f0f0f0; /* Light gray rectangle */
     display: flex;
     align-items: center;
     justify-content: space-between; /* Space between text and image */
-    border: 1px solid #a49b9b; /* Optional border */
+    border: 1px solid #ccc; /* Optional border */
     border-radius: 8px; /* Optional border radius */
-    margin-top: 100px; /* Space between navbar and rectangle */
+    margin-top: 50px; /* Space between navbar and rectangle */
     padding: 20px; /* Optional padding inside the rectangle */
   }
   
@@ -26,7 +28,7 @@ section {
   }
   
   .image {
-    width: 40%; /* Adjust width as needed */
+    width: 30%; /* Adjust width as needed */
     height: auto; /* Maintain aspect ratio */
   }
   .greeting-container {
@@ -38,6 +40,7 @@ section {
     color: #555; /* Slightly lighter color for the greeting */
   }
   .animated-sentence {
+    display: inline-block;
     font-size: 24px;
     color: #555; /* Slightly lighter color for the animated sentence */
     margin-top: 10px; /* Space between greeting and animated sentence */
@@ -91,3 +94,31 @@ section {
       border-color: black; /* Shows the cursor briefly in the middle */
     }
   }
+  /* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .rectangle {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .text-container {
+    padding-right: 0; /* Remove right padding */
+    text-align: center; /* Center text */
+  }
+
+  .image {
+    width: 80%; /* Make image larger on smaller screens */
+    margin-top: 10px; /* Add space between text and image */
+  }
+}
+
+@media (max-width: 480px) {
+  .rectangle {
+    padding: 5px; /* Further reduce padding on very small screens */
+  }
+
+  .image {
+    width: 100%; /* Full width on extra small screens */
+  }
+}
