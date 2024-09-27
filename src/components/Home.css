@@ -36,14 +36,14 @@ section {
   }
   
   .greeting-text {
-    font-size: 24px;
-    color: #555; /* Slightly lighter color for the greeting */
+    font-size: 44px;
+    color: #040404; /* Slightly lighter color for the greeting */
   }
   .animated-sentence {
     display: inline-block;
     font-size: 24px;
     color: #555; /* Slightly lighter color for the animated sentence */
-    margin-top: 10px; /* Space between greeting and animated sentence */
+    margin-top: -44px; /* Space between greeting and animated sentence */
   }
   
   .animated-text {
