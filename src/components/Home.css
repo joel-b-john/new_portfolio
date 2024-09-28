@@ -1,124 +1,137 @@
-/* Home.css */
 section {
-    height: 100vh;
-    background-color: #a49b9b; /* White background */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px; /* Add some padding for smaller screens */
+  height: 100vh;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.rectangle {
+  width: 90%;
+  max-width: 900px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 40px;
+  transition: transform 0.3s ease;
+}
+
+.rectangle:hover {
+  transform: scale(1.05);
+}
+
+.text-container {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.greeting-container {
+  margin-bottom: 20px;
+}
+
+.greeting-text {
+  font-size: 48px;
+  color: #333;
+  margin: 0;
+}
+
+.animated-sentence {
+  display: inline-block;
+  font-size: 28px;
+  margin-top: 15px;
+  color: #555;
+}
+
+.passionate-text {
+  font-style: italic;
+  color: #222;
+}
+
+.animated-text {
+  display: inline-block;
+  color: #b00303;
+  font-weight: bold;
+  overflow: hidden; /* Hide overflow for typing effect */
+  white-space: nowrap; /* Prevent line break */
+  border-right: 3px solid black; /* Simulate the cursor */
+  width: 0; /* Start with 0 width */
+  animation: typing 4s steps(20, end) infinite, blink-cursor 0.75s step-end infinite;
+  /* Add infinite loop to typing animation */
+}
+
+/* Typing effect */
+@keyframes typing {
+  0% {
+    width: 0;
   }
-  
-  .rectangle {
-    width: 90%; /* Use percentages for responsiveness */
-    max-width: 800px; /* Optional: limit max width for larger screens */
-    height: auto; /* Allow height to adjust based on content */
-    background-color: #f0f0f0; /* Light gray rectangle */
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Space between text and image */
-    border: 1px solid #ccc; /* Optional border */
-    border-radius: 8px; /* Optional border radius */
-    margin-top: 50px; /* Space between navbar and rectangle */
-    padding: 20px; /* Optional padding inside the rectangle */
+  50% {
+    width: 100%; /* Reveal text completely */
   }
-  
-  .text-container {
-    flex: 1; /* Allow text container to grow */
-    padding-right: 20px; /* Space between text and image */
+  100% {
+    width: 0; /* Hide the text again for the next loop */
   }
-  
-  .image {
-    width: 30%; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
+}
+
+/* Blinking cursor animation */
+@keyframes blink-cursor {
+  50% {
+    border-color: transparent;
   }
-  .greeting-container {
-    margin-top: 20px; /* Space between name and greeting */
-  }
-  
-  .greeting-text {
-    font-size: 44px;
-    color: #040404; /* Slightly lighter color for the greeting */
-  }
-  .animated-sentence {
-    display: inline-block;
-    font-size: 24px;
-    color: #555; /* Slightly lighter color for the animated sentence */
-    margin-top: -44px; /* Space between greeting and animated sentence */
-  }
-  
-  .animated-text {
-    display: inline-block;
-    white-space: nowrap; /* Ensures the text does not break into multiple lines */
-    overflow: hidden; /* Hides the text that hasn't appeared yet */
-    border-right: 2px solid; /* Simulates the cursor effect */
-    font-family: monospace; /* Optional: Gives it a more "typewriter" look */
-    animation: typing 4s steps(20) infinite, blink-cursor 0.75s step-end ;
-  }
-  
-  /* Keyframes for typing animation */
-  @keyframes typing {
-    0% {
-      width: 0; /* Start by hiding all the text */
-    }
-    80% {
-      width: 100%; /* Reveal the entire text */
-    }
-    100% {
-      width: 0; /* Hide the text again for a seamless loop */
-    }
-  }
-  
-  /* Cursor blinking animation */
-  @keyframes blink-cursor {
-    from, to {
-      border-color: transparent; /* Hides the cursor at both ends */
-    }
-    50% {
-      border-color: black; /* Shows the cursor briefly in the middle */
-    }
-  }
-  
-  
-  /* Styling the cursor line after the text */
-  .cursor {
-    display: inline-block;
-    width: 1px;
-    background-color: black;
-    animation: blink-cursor 0.75s step-end infinite;
-  }
-  @keyframes blink-cursor {
-    from, to {
-      border-color: transparent; /* Hides the cursor at both ends */
-    }
-    50% {
-      border-color: black; /* Shows the cursor briefly in the middle */
-    }
-  }
-  /* Media Queries for Responsiveness */
+}
+/* Image styling */
+.image {
+  width: 35%;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: rotate(5deg);
+}
+
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .rectangle {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    align-items: center; /* Center items */
-    padding: 10px; /* Reduce padding */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
   }
 
   .text-container {
-    padding-right: 0; /* Remove right padding */
-    text-align: center; /* Center text */
+    padding-right: 0;
+    text-align: center;
   }
 
   .image {
-    width: 80%; /* Make image larger on smaller screens */
-    margin-top: 10px; /* Add space between text and image */
+    width: 80%;
+    margin-top: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .rectangle {
-    padding: 5px; /* Further reduce padding on very small screens */
+  .greeting-text {
+    font-size: 36px;
+  }
+
+  .animated-sentence {
+    font-size: 22px;
   }
 
   .image {
-    width: 100%; /* Full width on extra small screens */
+    width: 100%;
   }
 }

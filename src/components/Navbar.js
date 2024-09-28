@@ -28,7 +28,7 @@ const navbarStyle = {
   display: 'flex',
   alignItems: 'center',   // Center items vertically
   justifyContent: 'space-between', // Space between logo and nav items
-  backgroundColor: 'black',
+  backgroundColor: '',
   padding: '0 20px',
   zIndex: 1000,
 };
