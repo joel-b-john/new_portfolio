@@ -1,0 +1,83 @@
+.skills-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+  }
+  
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    background-color: #f0f0f0;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .skills-heading {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .skills-icons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow wrapping of icons */
+    width: 100%;
+  }
+  
+  .skill-icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Tooltip styling */
+  .skill-icon .tooltiptext {
+    visibility: hidden;
+    width: 80px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .skill-icon:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .skill-icon:hover {
+    transform: scale(1.2); /* Enlarge icon on hover */
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .skills-container {
+      width: 90%;
+    }
+  
+    .skills-icons {
+      flex-direction: column;
+    }
+  }
+  
